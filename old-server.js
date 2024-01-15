@@ -1,16 +1,19 @@
-import fetch from 'node-fetch';
-import dotenv from 'dotenv';
-import express from 'express';
+// https://rapidapi.com/guides/call-apis-in-express-via-node-fetch
+const fetch = (...args) =>
+    import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
+const dotenv = (...args) =>
+    import('dotenv').then(({ default: fetch }) => fetch(...args));
+// import dotenv from 'dotenv';
+
+const express = require('express')
 const app = express()
 const port = 3000;
 
-dotenv.config();
-
 // hubitat config
-const hub = {
-    host: process.env.HUB_HOST,
-    accessToken: process.env.HUB_ACCESS_TOKEN
+hub = {
+    host: '192.168.86.30',
+    accessToken: '48e363b2-5c89-4efc-9533-d65f805c6088'
 }
 
 app.get('/', (req, res) => {
@@ -18,6 +21,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/devices', async (req, res) => {
+    // res.send('Hellooo World!')
+
     const response = await fetch(`http://${hub.host}/apps/api/43/devices/33?access_token=${hub.accessToken}`);
     const data = await response.json();
 
