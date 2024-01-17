@@ -21,10 +21,11 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/devices', async (req, res) => {
-    const response = await fetch(`http://${hub.host}/apps/api/43/devices?access_token=${hub.accessToken}`);
-    const data = await response.json();
+    // const response = await fetch(`http://${hub.host}/apps/api/43/devices?access_token=${hub.accessToken}`);
+    // const data = await response.json();
+    const devices = await getDevices();
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(data, null, 3));
+    res.end(JSON.stringify(devices, null, 3));
 })
 
 app.get('/devices/:deviceId', async (req, res) => {
