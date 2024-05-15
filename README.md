@@ -3,13 +3,14 @@
 ## TODO 
 
 - [x] Move most workloads to linux server
-- [ ] Expose ollama from high performing machine
-- [ ] Ensure GPUs are all used
+- [x] Expose ollama from high performing machine
+- [x] Ensure GPUs are all used
 - [ ] Add weather to home dashboard
 - [ ] Add timed jobs and push notifications to ntfy
 - [ ] Enable reverse proxy and ACME
 - [ ] Authenticate user and conditionally grant access
-- [x] Condense into single Docker Compose file
+- [x] Condense into single Docker Compose file (mocstly)
+- [ ] Add Automatic1111 Stable Diffusion to central Ollama config
 - [ ] Add compute node and switch to Docker Swarm or Kubernetes
 
 
@@ -20,8 +21,11 @@
 ./server/build.sh
 ./web/build.sh
 
-# start the services
+# start the core services
 sudo docker-compose -f home.yml up -d
+
+# start the ollama services (might be on a more powerful host machine)
+sudo docker-compose -f ollama.yml up -d
 ```
 
 
