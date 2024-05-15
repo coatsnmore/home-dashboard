@@ -15,19 +15,21 @@
 
 - Home Services:
     - Device Metrics:
-        href: http://192.168.86.29:7775
+        href: http://192.168.86.29:7773
         description: Device Metrics from Hubitat
     - Home Dashboard:
-        href: http://localhost:7774
+        href: hhttp://192.168.86.29:7771
         description: Home Dashboard with Notifications
     - NTFY:
-        href: http://localhost:8888
+        href: http://192.168.86.29:7770
         description: Notification Service
     - Open Meteo:
-        href: http://localhost:7773
+        href: http://192.168.86.29:7774
         description: Open Weather Service
 
 - Control Plane:
     - Homepage:
-        href: http://localhost:80
+        href: http://192.168.86.29:7772
         description: Homepage is 😎
+    - Portainer:
+        href: http://192.168.86.29:9000

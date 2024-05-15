@@ -1,6 +1,6 @@
 import { notifyMe } from './notifications.js';
 
-const host = `192.168.86.247:8888`
+const host = `192.168.86.29:7770`
 const publishURL = `http://${host}/todos`;
 const subscribeURL = `ws:/${host}/todos/ws`;
 const events = document.getElementById('events');
@@ -16,9 +16,10 @@ document.getElementById("publishButton").onclick = () => {
 
 // Incoming events
 websocket.onopen = () => {
-    // let event = document.createElement('div');
-    // event.innerHTML = `WebSocket connected to ${subscribeURL}`;
-    // events.appendChild(event);
+    let event = document.createElement('div');
+    event.innerHTML = `WebSocket connected to ${subscribeURL}`;
+    events.appendChild(event);
+
     console.log(`WebSocket connected to ${subscribeURL}`);
 };
 websocket.onerror = (e) => {

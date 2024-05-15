@@ -2,36 +2,37 @@
 
 ## TODO 
 
-- [ ] Move most workloads to linux server
+- [x] Move most workloads to linux server
 - [ ] Expose ollama from high performing machine
 - [ ] Ensure GPUs are all used
 - [ ] Add weather to home dashboard
 - [ ] Add timed jobs and push notifications to ntfy
 - [ ] Enable reverse proxy and ACME
 - [ ] Authenticate user and conditionally grant access
-- [ ] Condense into single Docker Compose file
+- [x] Condense into single Docker Compose file
 - [ ] Add compute node and switch to Docker Swarm or Kubernetes
 
 
-# Deprecated Setup
+# Build and Run
 
 ```bash
-# homepage
-docker-compose -f docker-compose-homepage.yml up -d
+# build custom services
+./build.sh
+./web/build.sh
 
-# portainer
-docker-compose -f docker-compose-homepage.yml up -d
-
-# startup the general server with docker
-./startup.sh
-
-# startup the web server with docker
-./web/startup.sh
+# start the services
+sudo docker-compose -f home.yml up -d
 ```
 
-## Local Dev For Server
+
+## Local Server Development
 ```bash
 cp .env.example .env
 // configure env parameters
 npm i && npm run dev
+```
+
+## Local Web Development
+```bash
+cd web && npm i && npm run dev
 ```

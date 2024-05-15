@@ -1,0 +1,73 @@
+# https://github.com/open-meteo/open-meteo/blob/main/docs/getting-started.md
+# docker run -d --rm -v open-meteo-data:/app/data -p 7773:8080 ghcr.io/open-meteo/open-meteo
+---
+version: "3.3"
+volumes:
+  portainer-data:
+    driver: local
+  open-webui:
+    driver: local
+  open-meteo-data:
+    driver: local
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - 7772:3000
+    volumes:
+      - ./homepage/config:/app/config # Make sure your local config directory exists
+      - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
+    restart: unless-stopped
+  portainer:
+    container_name: portainer
+    image: docker.io/portainer/portainer-ce:latest
+    ports:
+      - 9000:9000
+      - 9443:9443
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
+    restart: unless-stopped
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - 3333:3000
+    # environment:
+      # - OLLAMA_BASE_URL=192.168.86.247:11434
+    volumes:
+      - open-webui:/app/backend/data
+    restart: unless-stopped
+  ntfy:
+    image: binwiederhier/ntfy
+    container_name: ntfy
+    ports:
+      - 7770:80
+    command: ["serve"]
+    restart: unless-stopped
+  home-web:
+    image: home-web:1
+    container_name: home-web
+    ports:
+      - 7771:80
+    restart: unless-stopped
+  home-server:
+    image: home-server:1
+    container_name: home-server
+    ports:
+      - 7773:7777
+    restart: unless-stopped
+  open-meteo:
+    image: ghcr.io/open-meteo/open-meteo
+    container_name: open-meteo
+    ports:
+      - 7774:8080
+    volumes:
+      - open-meteo-data:/app/data
+    restart: unless-stopped
+  # https://github.com/open-meteo/open-meteo/blob/main/docs/getting-started.md
+# docker run -d --rm -v open-meteo-data:/app/data -p 7773:8080 ghcr.io/open-meteo/open-meteo
+
+# docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
