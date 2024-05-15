@@ -1,4 +1,10 @@
-# A personal Home Dashboard
+# A Cobbled Together Mess of a HomeLab
+
+## TODO 
+- [ ] whatever I want
+
+
+# deprecated setup
 
 ```bash
 # startup the server with docker

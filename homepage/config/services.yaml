@@ -4,18 +4,18 @@
 
 - AI Services:
     - Open Web UI:
-        href: http://localhost:3000
+        href: http://192.168.86.29:3000
         description: Open Web UI for Local AI Services
     - Ollama:
-        href: http://localhost:11434
+        href: http://192.168.86.247:11434
         description: Ollama Base Service
     - Stable Diffusion:
-        href: http://localhost:7860
+        href: http://192.168.86.247:7860
         description: Ollama Base Service
 
 - Home Services:
     - Device Metrics:
-        href: http://localhost:7775
+        href: http://192.168.86.29:7775
         description: Device Metrics from Hubitat
     - Home Dashboard:
         href: http://localhost:7774
