@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# run on wsl in Windows
+# run on wsl in Windows or linux
 docker run -d \
   -p 9001:9001 \
   --name portainer_agent \

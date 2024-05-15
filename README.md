@@ -17,7 +17,7 @@
 
 ```bash
 # build custom services
-./build.sh
+./server/build.sh
 ./web/build.sh
 
 # start the services
@@ -27,6 +27,7 @@ sudo docker-compose -f home.yml up -d
 
 ## Local Server Development
 ```bash
+cd server
 cp .env.example .env
 // configure env parameters
 npm i && npm run dev
