@@ -1,0 +1,33 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- AI Services:
+    - Open Web UI:
+        href: http://localhost:3000
+        description: Open Web UI for Local AI Services
+    - Ollama:
+        href: http://localhost:11434
+        description: Ollama Base Service
+    - Stable Diffusion:
+        href: http://localhost:7860
+        description: Ollama Base Service
+
+- Home Services:
+    - Device Metrics:
+        href: http://localhost:7775
+        description: Device Metrics from Hubitat
+    - Home Dashboard:
+        href: http://localhost:7774
+        description: Home Dashboard with Notifications
+    - NTFY:
+        href: http://localhost:8888
+        description: Notification Service
+    - Open Meteo:
+        href: http://localhost:7773
+        description: Open Weather Service
+
+- Control Plane:
+    - Homepage:
+        href: http://localhost:80
+        description: Homepage is 😎
