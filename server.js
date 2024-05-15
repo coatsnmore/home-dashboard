@@ -4,7 +4,7 @@ import express from 'express';
 
 dotenv.config();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 7777;
 const app = express()
 
 // hubitat config
