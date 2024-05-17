@@ -21,7 +21,7 @@
         href: http://192.168.86.30/
         description: Hubitat zWave+ IOT hub
     - Home Dashboard:
-        href: hhttp://192.168.86.29:7771
+        href: http://192.168.86.29:7771
         description: Home Dashboard with Notifications
     - NTFY:
         href: http://192.168.86.29:7770
