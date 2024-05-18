@@ -24,7 +24,7 @@ services:
     volumes:
       - ollama:/root/.ollama
     command:
-      - serve --api --listen
+      - serve
     deploy:
       resources:
         reservations:
