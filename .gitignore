@@ -5,3 +5,5 @@ letsencrypt
 *.log
 **/*.log
 **/logs/*.log
+home-assistant
+whisper

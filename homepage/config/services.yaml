@@ -13,6 +13,20 @@
         href: http://192.168.86.247:7860
         description: Ollama Base Service
 
+- Home Assistant Services:
+    - Home Assistant:
+        href: http://192.168.86.29:8123
+        description: Home Assistant
+    - Piper:
+        href: http://192.168.86.247:10200
+        description: Text to Speech 
+    - Whisper:
+        href: http://192.168.86.247:10300
+        description: Speech to Text
+    - openwakeword:
+        href: http://192.168.86.247:12202
+        description: Wake Word Service for HA
+
 - Home Services:
     - Device Metrics:
         href: http://192.168.86.29:7773
