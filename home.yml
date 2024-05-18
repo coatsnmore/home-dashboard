@@ -1,5 +1,4 @@
 ---
-version: "3.3"
 volumes:
   portainer-data:
     driver: local
@@ -49,7 +48,7 @@ services:
     image: ghcr.io/open-meteo/open-meteo
     container_name: open-meteo
     ports:
-      - 7774:8080
+      - 7775:8080
     volumes:
       - open-meteo-data:/app/data
     restart: unless-stopped

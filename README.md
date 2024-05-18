@@ -18,14 +18,20 @@
 
 ```bash
 # build custom services
-./server/build.sh
-./web/build.sh
+cd server
+./build.sh
+cd ../web
+./build.sh
+cd ..
 
 # start the core services
-sudo docker-compose -f home.yml up -d
+sudo docker compose -f home.yml up -d
 
 # start the ollama services (might be on a more powerful host machine)
-sudo docker-compose -f ollama.yml up -d
+sudo docker compose -f ollama.yml up -d
+
+# WARNING: you may need to do additional work to expose docker network to home network
+# When running this in Ubuntu, I had to use Portainer to modify RBAC on network to public.
 ```
 
 

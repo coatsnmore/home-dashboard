@@ -4,7 +4,7 @@
 
 - AI Services:
     - Open Web UI:
-        href: http://192.168.86.29:3000
+        href: http://192.168.86.247:3000
         description: Open Web UI for Local AI Services
     - Ollama:
         href: http://192.168.86.247:11434
@@ -17,14 +17,17 @@
     - Device Metrics:
         href: http://192.168.86.29:7773
         description: Device Metrics from Hubitat
+    - Hubitat:
+        href: http://192.168.86.30/
+        description: Hubitat zWave+ IOT hub
     - Home Dashboard:
-        href: hhttp://192.168.86.29:7771
+        href: http://192.168.86.29:7771
         description: Home Dashboard with Notifications
     - NTFY:
         href: http://192.168.86.29:7770
         description: Notification Service
     - Open Meteo:
-        href: http://192.168.86.29:7774
+        href: http://192.168.86.29:7775
         description: Open Weather Service
 
 - Control Plane:
@@ -33,3 +36,4 @@
         description: Homepage is 😎
     - Portainer:
         href: http://192.168.86.29:9000
+        description: Container visibility
