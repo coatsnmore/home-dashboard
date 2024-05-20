@@ -7,3 +7,4 @@ letsencrypt
 **/logs/*.log
 home-assistant
 whisper
+piper/config/*.onnx
